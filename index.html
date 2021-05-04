@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Dicee</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+  <h1>Dice Game</h1>
+  <div class="container">
+    <div class="col">
+      <h2>Player 1</h2>
+      <img id="dice1" src="./SVG/Dice1.svg" alt="Dice with value of 1">
+      <button onclick="diceRoll('one')">Roll</button>
+    </div>
+    <div class="col">
+      <h2>Player 2</h2>
+      <img id="dice2" src="./SVG/Dice1.svg" alt="Dice with value of 1">
+      <button onclick="diceRoll('two')">Roll</button>
+    </div>
+  </div>
+  </body>
+  <footer>
+    www 🎲 @Guku 🎲 com
+  </footer>
+
+<script type="text/javascript">
+
+  let firstDiceValue = 1;
+  let SecDiceValue = 1;
+  const diceArray = ["./SVG/Dice1.svg", "./SVG/Dice2.svg", "./SVG/Dice3.svg", "./SVG/Dice4.svg", "./SVG/Dice5.svg", "./SVG/Dice6.svg", ];
+  function diceRoll(dice){
+    let rnd = Math.floor(Math.random() * diceArray.length);
+    if(dice === 'one'){
+      firstDiceValue = rnd;
+      document.getElementById('dice1').src = diceArray[firstDiceValue];
+    }
+    else {
+      SecDiceValue = rnd;
+      document.getElementById('dice2').src = diceArray[SecDiceValue];
+    }
+  }
+</script>
+</html>
